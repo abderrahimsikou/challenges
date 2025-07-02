@@ -1,8 +1,8 @@
-name              = input('Enter Your Name:')
-salarie_heure     = float(input('Enter hourly wage:'))
-number_hour       = float(input('Enter Your Number Hours Worked:'))
-   
-def horaire_sup(name, salarie_heure, number_hour):
+def horaire_sup():
+    name              = input('Enter Your Name:')
+    salarie_heure     = float(input('Enter hourly wage:'))
+    number_hour       = float(input('Enter Your Number Hours Worked:'))
+    
     if number_hour > 40:
         hrSup      = number_hour - 40
         additional_salaire = hrSup * 1.5  
@@ -14,4 +14,4 @@ def horaire_sup(name, salarie_heure, number_hour):
         print('Regular salary')
         print( "Total", str(total))
     
-horaire_sup(name, salarie_heure, number_hour)
+horaire_sup()
