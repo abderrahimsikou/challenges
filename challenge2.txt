@@ -1,0 +1,199 @@
+sikou@PC:~/projet$ cd ..
+sikou@PC:~$ ls
+projet  user_backup
+sikou@PC:~$ mkdir user_backup1
+sikou@PC:~$ ls
+projet  user_backup  user_backup1
+sikou@PC:~$ cd user_backup1
+sikou@PC:~/user_backup1$ mkdir important
+sikou@PC:~/user_backup1$ cd important
+sikou@PC:~/user_backup1/important$ mkdir temporaire
+sikou@PC:~/user_backup1/important$ cd temporaire
+sikou@PC:~/user_backup1/important/temporaire$ mkdir rapport
+sikou@PC:~/user_backup1/important/temporaire$ ls
+rapport
+sikou@PC:~/user_backup1/important/temporaire$ cd ..
+sikou@PC:~/user_backup1/important$ cd ..
+sikou@PC:~/user_backup1$ ls
+important
+sikou@PC:~/user_backup1$ touch todo.txt notel.txt brouillon.txt test1.log test2.log
+sikou@PC:~/user_backup1$ ls
+brouillon.txt  important  notel.txt  test1.log  test2.log  todo.txt
+sikou@PC:~/user_backup1$ mv todo.txt important
+sikou@PC:~/user_backup1$ ls
+brouillon.txt  important  notel.txt  test1.log  test2.log
+sikou@PC:~/user_backup1$ mv notel.txt important
+sikou@PC:~/user_backup1$ ls
+brouillon.txt  important  test1.log  test2.log
+sikou@PC:~/user_backup1$ mv brouillon.txt test1.log test2.log /important/temporaire
+mv: target '/important/temporaire': No such file or directory
+sikou@PC:~/user_backup1$ mv brouillon.txt test1.log test2.log important/temporaire
+sikou@PC:~/user_backup1$ ls
+important
+sikou@PC:~/user_backup1$ cd important
+sikou@PC:~/user_backup1/important$ ls
+notel.txt  temporaire  todo.txt
+sikou@PC:~/user_backup1/important$ cd temporaire
+sikou@PC:~/user_backup1/important/temporaire$ ls
+brouillon.txt  rapport  test1.log  test2.log
+sikou@PC:~/user_backup1/important/temporaire$ cd ..
+sikou@PC:~/user_backup1/important$ ls
+notel.txt  temporaire  todo.txt
+sikou@PC:~/user_backup1/important$ cp todo.txt rapport/todo_backup.txt
+cp: cannot create regular file 'rapport/todo_backup.txt': No such file or directory
+sikou@PC:~/user_backup1/important$ cp todo.txt rapport
+sikou@PC:~/user_backup1/important$ cd rapport
+-bash: cd: rapport: Not a directory
+sikou@PC:~/user_backup1/important$ ls
+notel.txt  rapport  temporaire  todo.txt
+sikou@PC:~/user_backup1/important$ cd rapport
+-bash: cd: rapport: Not a directory
+sikou@PC:~/user_backup1/important$ cd ..
+sikou@PC:~/user_backup1$ ls
+important
+sikou@PC:~/user_backup1$ cd important
+sikou@PC:~/user_backup1/important$ ls
+notel.txt  rapport  temporaire  todo.txt
+sikou@PC:~/user_backup1/important$ cd rapport
+-bash: cd: rapport: Not a directory
+sikou@PC:~/user_backup1/important$ rm rapport
+sikou@PC:~/user_backup1/important$ ls
+notel.txt  temporaire  todo.txt
+sikou@PC:~/user_backup1/important$ ls rapport
+ls: cannot access 'rapport': No such file or directory
+sikou@PC:~/user_backup1/important$ cd rapport
+-bash: cd: rapport: No such file or directory
+sikou@PC:~/user_backup1/important$ cd temporaire
+sikou@PC:~/user_backup1/important/temporaire$ ls
+brouillon.txt  rapport  test1.log  test2.log
+sikou@PC:~/user_backup1/important/temporaire$ cd ..
+sikou@PC:~/user_backup1/important$ ls
+notel.txt  temporaire  todo.txt
+sikou@PC:~/user_backup1/important$ cp todo.txt temporaire
+sikou@PC:~/user_backup1/important$ ls
+notel.txt  temporaire  todo.txt
+sikou@PC:~/user_backup1/important$ cd temporaire
+sikou@PC:~/user_backup1/important/temporaire$ ls
+brouillon.txt  rapport  test1.log  test2.log  todo.txt
+sikou@PC:~/user_backup1/important/temporaire$ mv todo.txt todo_backup.txt
+sikou@PC:~/user_backup1/important/temporaire$ ls
+brouillon.txt  rapport  test1.log  test2.log  todo_backup.txt
+sikou@PC:~/user_backup1/important/temporaire$ cd ..
+sikou@PC:~/user_backup1/important$ ls
+notel.txt  temporaire  todo.txt
+sikou@PC:~/user_backup1/important$ cat note.txt todo.txt > temporaire/rapport.txt/synthese.txt
+-bash: temporaire/rapport.txt/synthese.txt: No such file or directory
+sikou@PC:~/user_backup1/important$ cat note.txt todo.txt > synthese.txt
+cat: note.txt: No such file or directory
+sikou@PC:~/user_backup1/important$ cat notel.txt todo.txt > temporaire/rapport.txt/synthese.txt
+-bash: temporaire/rapport.txt/synthese.txt: No such file or directory
+sikou@PC:~/user_backup1/important$ cat notel.txt todo.txt > temporaire/rapport/synthese.txt
+sikou@PC:~/user_backup1/important$ ls
+notel.txt  synthese.txt  temporaire  todo.txt
+sikou@PC:~/user_backup1/important$ cd temporaire
+sikou@PC:~/user_backup1/important/temporaire$ ls
+brouillon.txt  rapport  test1.log  test2.log  todo_backup.txt
+sikou@PC:~/user_backup1/important/temporaire$ cd ..
+sikou@PC:~/user_backup1/important$ ls
+notel.txt  synthese.txt  temporaire  todo.txt
+sikou@PC:~/user_backup1/important$ mv synthese.txt temporaire/rapport
+sikou@PC:~/user_backup1/important$ cd temporaire
+sikou@PC:~/user_backup1/important/temporaire$ ls
+brouillon.txt  rapport  test1.log  test2.log  todo_backup.txt
+sikou@PC:~/user_backup1/important/temporaire$ cd rapport
+sikou@PC:~/user_backup1/important/temporaire/rapport$ ls
+synthese.txt
+sikou@PC:~/user_backup1/important/temporaire/rapport$ head -n 10 synthese.txt
+sikou@PC:~/user_backup1/important/temporaire/rapport$ cd ..
+sikou@PC:~/user_backup1/important/temporaire$ ls
+brouillon.txt  rapport  test1.log  test2.log  todo_backup.txt
+sikou@PC:~/user_backup1/important/temporaire$ mv test1.log test2.log
+sikou@PC:~/user_backup1/important/temporaire$ ls
+brouillon.txt  rapport  test2.log  todo_backup.txt
+sikou@PC:~/user_backup1/important/temporaire$ mv  test2.log
+mv: missing destination file operand after 'test2.log'
+Try 'mv --help' for more information.
+sikou@PC:~/user_backup1/important/temporaire$ ls
+brouillon.txt  rapport  test2.log  todo_backup.txt
+sikou@PC:~/user_backup1/important/temporaire$ mv test2.log
+mv: missing destination file operand after 'test2.log'
+Try 'mv --help' for more information.
+sikou@PC:~/user_backup1/important/temporaire$ rm test2.log
+sikou@PC:~/user_backup1/important/temporaire$ ls
+brouillon.txt  rapport  todo_backup.txt
+sikou@PC:~/user_backup1/important/temporaire$ cd ..
+sikou@PC:~/user_backup1/important$ ls
+notel.txt  temporaire  todo.txt
+sikou@PC:~/user_backup1/important$ rmdir temporaire
+rmdir: failed to remove 'temporaire': Directory not empty
+sikou@PC:~/user_backup1/important$ rmdir -r temporaire
+rmdir: invalid option -- 'r'
+Try 'rmdir --help' for more information.
+sikou@PC:~/user_backup1/important$ rmdir -f temporaire
+rmdir: invalid option -- 'f'
+Try 'rmdir --help' for more information.
+sikou@PC:~/user_backup1/important$ ls
+notel.txt  temporaire  todo.txt
+sikou@PC:~/user_backup1/important$ rmdir -rf temporaire
+rmdir: invalid option -- 'r'
+Try 'rmdir --help' for more information.
+sikou@PC:~/user_backup1/important$ rmdir --help
+Usage: rmdir [OPTION]... DIRECTORY...
+Remove the DIRECTORY(ies), if they are empty.
+
+      --ignore-fail-on-non-empty
+                    ignore each failure to remove a non-empty directory
+  -p, --parents     remove DIRECTORY and its ancestors;
+                    e.g., 'rmdir -p a/b' is similar to 'rmdir a/b a'
+
+  -v, --verbose     output a diagnostic for every directory processed
+      --help        display this help and exit
+      --version     output version information and exit
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report any translation bugs to <https://translationproject.org/team/>
+Full documentation <https://www.gnu.org/software/coreutils/rmdir>
+or available locally via: info '(coreutils) rmdir invocation'
+sikou@PC:~/user_backup1/important$ rmdir -v temporaire
+rmdir: removing directory, 'temporaire'
+rmdir: failed to remove 'temporaire': Directory not empty
+sikou@PC:~/user_backup1/important$ rmdir -p temporaire
+rmdir: failed to remove 'temporaire': Directory not empty
+sikou@PC:~/user_backup1/important$ rm -r temporaire
+sikou@PC:~/user_backup1/important$ ls
+notel.txt  todo.txt
+sikou@PC:~/user_backup1/important$ cd ..
+sikou@PC:~/user_backup1$ pwd
+/home/sikou/user_backup1
+sikou@PC:~/user_backup1$ tree
+.
+└── important
+    ├── notel.txt
+    └── todo.txt
+
+2 directories, 2 files
+sikou@PC:~/user_backup1$ zip -r important_backup.zip important/
+  adding: important/ (stored 0%)
+  adding: important/todo.txt (stored 0%)
+  adding: important/notel.txt (stored 0%)
+sikou@PC:~/user_backup1$ mkdir restore
+sikou@PC:~/user_backup1$ ls
+important  important_backup.zip  restore
+sikou@PC:~/user_backup1$ unzip important_backup.zip -d restore
+Archive:  important_backup.zip
+   creating: restore/important/
+ extracting: restore/important/todo.txt
+ extracting: restore/important/notel.txt
+sikou@PC:~/user_backup1$ tree
+.
+├── important
+│   ├── notel.txt
+│   └── todo.txt
+├── important_backup.zip
+└── restore
+    └── important
+        ├── notel.txt
+        └── todo.txt
+
+4 directories, 5 files
+sikou@PC:~/user_backup1$
