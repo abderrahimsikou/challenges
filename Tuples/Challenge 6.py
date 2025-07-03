@@ -23,5 +23,4 @@ new_tuple = ('tres bien', 2024)
 
 combine = etudiant_info + new_tuple
 
-for x , y in enumerate(combine, 1):
-    print(x,y)
+print(combine)
